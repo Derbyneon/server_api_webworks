@@ -36,3 +36,14 @@ async def subscribe(email: Email):
         json.dump(emails, file, indent=2)
 
     return {"message": "Email enregistré avec succès!"}
+
+@app.get("/")
+async def root():
+    return {
+        "message": "Bienvenue sur l'API d'inscription par email!",
+        "description": "Cette API permet d'enregistrer des adresses email pour la souscription à des newsletters ou notifications.",
+        "endpoints": {
+            "/subscribe": "POST - Enregistrer une adresse email",
+        },
+        "note": "Pour enregistrer une adresse email, envoyez une requête POST au point de terminaison /subscribe avec le champ 'email' dans le corps de la requête."
+    }

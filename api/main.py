@@ -6,10 +6,16 @@ import os
 
 app = FastAPI()
 
-# Configurer les règles CORS
+# Configurer les règles CORS pour autoriser uniquement les requêtes depuis ton domaine
+origins = [
+    "https://webworks-co.vercel.app",  # Ton domaine
+    "http://localhost",  # Pour les tests en local
+    "http://localhost:8000",  # Pour les tests en local
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Autoriser toutes les origines (peut être restreint à une URL spécifique)
+    allow_origins=origins,  # Restreindre les origines autorisées
     allow_credentials=True,
     allow_methods=["*"],  # Autoriser toutes les méthodes HTTP (GET, POST, etc.)
     allow_headers=["*"],  # Autoriser tous les headers

@@ -8,7 +8,7 @@ app = FastAPI()
 
 # Configurer les règles CORS pour autoriser uniquement les requêtes depuis ton domaine
 origins = [
-    "https://webworks-co.vercel.app/index.html",  # Ton domaine
+    "https://webworks-co.vercel.app",  # Ton domaine
     "http://localhost",  # Pour les tests en local
     "http://localhost:8000",  # Pour les tests en local
 ]
